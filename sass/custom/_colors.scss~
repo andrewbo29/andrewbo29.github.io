@@ -3,10 +3,10 @@
 // If you need a handy color picker try http://hslpicker.com
 
 $header-bg: #303030;
-$subtitle-color: #0f9fff;
+$subtitle-color: #d10000;
 $nav-bg: #2b2b2b;
-$nav-bg-front: #2b2b2b;
-$nav-bg-back: #2b2b2b;
+$nav-bg-front: #303030;
+$nav-bg-back: #303030;
 //$sidebar-bg: desaturate(#eceff5, 8);
 //$sidebar-link-color: saturate(#526f9a, 10);
 //$sidebar-link-color-hover: darken(#7ab662, 9);
@@ -44,7 +44,7 @@ $nav-bg-back: #2b2b2b;
 
 $page-bg: #303030;
 
-$title-color: #0f9fff;
+$title-color: #d10000;
 
 $nav-color: #f2f2f2;
 $nav-color-hover: #0f9fff;
