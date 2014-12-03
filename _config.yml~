@@ -2,13 +2,11 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://datadeep.github.io
-title: DataDeep
+url: http://andrewbo29.github.io
+title: DataDeep Evil Twin
 subtitle: Sapere aude
 author: Команда datadeep.ru
 simple_search: https://www.google.com/search
-description: Блог, посвящённый науке о данных (Data Science) и машинному обучению (Machine Learning)
-keywords: Data Science, Machine Learning, Data Mining, Optimization, Visualization, Наука о данных, Машинное обучение, Оптимизация, Визуализация
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -98,11 +96,11 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name: datadeep
+disqus_short_name: 
 disqus_show_comment_count: true
 
 # Google Analytics
-google_analytics_tracking_id: UA-56118002-1
+google_analytics_tracking_id:
 
 # Facebook Like
 facebook_like: true
