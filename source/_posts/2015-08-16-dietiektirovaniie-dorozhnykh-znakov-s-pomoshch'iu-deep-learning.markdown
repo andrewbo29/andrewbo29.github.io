@@ -99,7 +99,8 @@ keywords: machine learning, deep learning, computer vision
 [пример с фарой]
 
 Иногда алгоритм находит не все знаки:
-[пример с не всеми знаками]
+
+{% img /images/res_1.jpeg Не все знаки %}
 
 False positive:
 [пример false positive] 
