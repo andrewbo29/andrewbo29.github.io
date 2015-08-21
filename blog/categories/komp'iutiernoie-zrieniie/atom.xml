@@ -4,7 +4,7 @@
   <title><![CDATA[Категория: Компьютерное зрение | DataDeep Evil Twin]]></title>
   <link href="http://datadeep.ru/blog/categories/komp'iutiernoie-zrieniie/atom.xml" rel="self"/>
   <link href="http://datadeep.ru/"/>
-  <updated>2015-08-20T14:40:59+03:00</updated>
+  <updated>2015-08-21T09:17:10+03:00</updated>
   <id>http://datadeep.ru/</id>
   <author>
     <name><![CDATA[Команда datadeep.ru]]></name>
@@ -18,15 +18,15 @@
     <link href="http://datadeep.ru/blog/2015/08/16/dietiektirovaniie-dorozhnykh-znakov-s-pomoshch'iu-deep-learning/"/>
     <updated>2015-08-16T23:36:02+03:00</updated>
     <id>http://datadeep.ru/blog/2015/08/16/dietiektirovaniie-dorozhnykh-znakov-s-pomoshch&#8217;iu-deep-learning</id>
-    <content type="html"><![CDATA[<script type="text/javascript" src="http://d3js.org/d3.v2.js"></script>
+    <content type="html"><![CDATA[<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-<script type="text/javascript" src="http://datadeep.ru/d3/jquery.tipsy.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<link href="http://datadeep.ru/d3/tipsy_detect_signs.css" rel="stylesheet" type="text/css" />
+<link href="http://datadeep.ru/d3/bootstrap_tooltip_popover.css" rel="stylesheet" />
 
-<p>Команда блога DataDeep.ru не смогла остаться в стороне от <a href="https://meduza.io/news/2015/07/17/samoupravlyaemaya-mashina-google-popala-v-pervoe-dtp-s-postradavshimi">новости об аварии самоуправляемого автомобиля Google</a>, и поэтому я решил написать пост о своём опыте разработки системы для обнаружения дорожных знаков, основанной на машинном обучении. Такую систему вполне можно отнести к компонентам, которые используются как для разработки механизмов автономного упраления автомобилем, так и в современных системах помощи водителю :)</p>
+<p>Команда блога DataDeep не смогла остаться в стороне от <a href="https://meduza.io/news/2015/07/17/samoupravlyaemaya-mashina-google-popala-v-pervoe-dtp-s-postradavshimi">новости об аварии самоуправляемого автомобиля Google</a>, и поэтому я решил написать пост о своём опыте разработки системы для обнаружения дорожных знаков, основанной на машинном обучении. Такую систему вполне можно отнести к компонентам, которые используются как для разработки механизмов автономного упраления автомобилем, так и в современных системах помощи водителю :)</p>
 
 <p><img src="/images/selfdrivingcar.jpg" width="768" height="576" title="Self-driving car" ></p>
 
@@ -54,23 +54,23 @@
 
 <h2 id="state-of-the-art-">Обзор <em>state of the art</em> подходов</h2>
 
-<p>Начиная примерно с 2012 года, когда на очень известном в сообществе computer vision соревновании по распознаванию изображений ImageNet победила команда университета Торонто под руководством Джеффри Хинтона, показав при этом значительный отрыв в точности от других команд, state of the art методом для распознавания изображений считается использование глубоких свёрточных нейронных сетей (Convolutional neural network, CNN), которые, в свою очередь, являются представителем класса алгоритмов машинного обучения deep learning (глубокое или, если угодно, глубинное обучение). Очень многие лучшие на сегодняшний день системы машинного зрения основаны на CNN, например <a href="https://research.facebook.com/publications/480567225376225/deepface-closing-the-gap-to-human-level-performance-in-face-verification/">система распознавания лиц от Facebook</a> (к слову, глава Facebook AI Research Ян Лекун является одним из пионеров в исследовании CNN и deep learning).</p>
+<p>Начиная примерно с 2012 года, когда на очень известном в сообществе computer vision соревновании по распознаванию изображений <a href="http://www.image-net.org/">ImageNet</a> победила команда университета Торонто под руководством Джеффри Хинтона, показав при этом значительный отрыв в точности от других команд, state of the art методом для распознавания изображений считается использование глубоких свёрточных нейронных сетей (Convolutional neural network, CNN), которые, в свою очередь, являются представителем класса алгоритмов машинного обучения deep learning (глубокое или, если угодно, глубинное обучение). Очень многие лучшие на сегодняшний день системы машинного зрения основаны на CNN, например <a href="https://research.facebook.com/publications/480567225376225/deepface-closing-the-gap-to-human-level-performance-in-face-verification/">система распознавания лиц от Facebook</a> (к слову, глава Facebook AI Research Ян Лекун является одним из пионеров в исследовании CNN и deep learning).</p>
 
 <p>В области детектирования предметов на изображении одним из самых эффективных является метод <em>Regions with CNN features</em> или <em>R-CNN</em>, представленный в 2014 году. Этот метод можно разделить на следующие этапы:</p>
 
 <ol>
   <li>Определение областей изображения, которые могут содержать интересующие нас объекты, с помощью алгоритма <em>Selective search</em>;</li>
   <li>Выделение из полученных областей признаков, используя свёрточную нейронную сеть;</li>
-  <li>Эти признаки подаются на вход SVM (Support vectors machine), которая классифицирут объект.</li>
+  <li>Эти признаки подаются на вход SVM (support vectors machine), которая классифицирует объект.</li>
 </ol>
 
 <p>Существуют и другие успешные методы детектирования, основанные на CNN, например <a href="http://arxiv.org/abs/1312.6229">построение регрессии</a> для нахождения четырёхмерного вектора ROI (т.е. на последнем уровне CNN находятся не вероятности, а целые значения). Однако, идея алгоритма, который мы будем строить, вдохновлена в первую очередь R-CNN, благодаря его простоте и эффективности, и реализует три его этапа, хотя имеет ряд значительных отличий.</p>
 
 <h2 id="section-1">Описание метода</h2>
 
-<p>Перед тем, как описать структуру метода для обнаружения дорожных знаков на изображении, скажу пару слов о технологиях, которые будут использованы. В качестве языка программирования используется Python, так как для него есть API всех необходимых библиотек, и в данном случае нам больше важна гибкость и лёгкость прототипирования, чем скорость работы приложения.</p>
+<p>Перед тем, как описать структуру метода для обнаружения дорожных знаков на изображении, скажу пару слов о технологиях, которые будут использованы. В качестве языка программирования применяется Python, так как для него есть API всех необходимых библиотек, и в данном случае нам больше важна гибкость и лёгкость прототипирования, чем скорость работы приложения.</p>
 
-<p>Вся работа со свёрточными нейронными сетями ведётся с помощью изумительной библиотеки <a href="http://caffe.berkeleyvision.org/">Caffe</a>. Она позволяет конструировать, обучать и применять CNN, содержит state of the art виды слоёв и методы тренировки сети, обрабатывает данные в различных форматах (в том числе HDF5), позволяет обучать сети на графическом процессоре (GPU) с использованием CUDA, имеет обёртку для Python pycaffe. Для caffe есть хранилище model zoo, в котором содержаться обученные модели, которые можно использовать для своих задач. Также хочется отметить хорошие туториалы и большое сообщество. Архитектура нейронных сетей и параметры метода обучения задаются в Caffe в файлах <a href="https://developers.google.com/protocol-buffers/docs/overview">формата prototxt</a>.</p>
+<p>Вся работа со свёрточными нейронными сетями ведётся с помощью изумительной библиотеки <a href="http://caffe.berkeleyvision.org/">Caffe</a>. Она позволяет конструировать, обучать и применять CNN, содержит state of the art виды слоёв и методы тренировки сети, обрабатывает данные в различных форматах (в том числе HDF5), позволяет обучать сети на графическом процессоре (GPU) с использованием CUDA, имеет обёртку для Python pycaffe. Для Caffe есть хранилище Model zoo, в котором содержаться обученные модели, которые можно использовать для своих задач. Также хочется отметить хорошие туториалы и большое сообщество. Архитектура нейронных сетей и параметры метода обучения задаются в Caffe в файлах <a href="https://developers.google.com/protocol-buffers/docs/overview">формата prototxt</a>.</p>
 
 <p>Для обработки изображений используется библиотека OpenCV, которая, я думаю, не нуждается в дальнейшем представлении.</p>
 
@@ -82,10 +82,10 @@
 
 <p>На следующем этапе алгоритма для определения того, содержит ли область изображения из предыдущего этапа знак, будем применять классификатор. В этом качестве выступит представитель класса методов deep learning — глубокая свёрточная нейронная сеть. Ей на вход будет поступать изображение, а на выходе будут две вероятности, сумма которых равна 1: того, что изображение содержит и не содержит дорожный знак. Архитектура нейронной сети, которую мы будем использовать, сходна c архитектурой весьма эффективной сети <em>Network in network</em> (NIN), которая хорошо себя показала в 2014 году в конкурсе <a href="http://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10</a> (определение, к какой из 10 категорий принадлежит изображение).</p>
 
-<p>На вход нейронная сеть получает RGB изображение размером $32\times32$, которое предварительно преобразуется в такой формат, если нужно. Рассмотрим вкратце слои сети.</p>
+<p>На вход нейронная сеть получает RGB изображение размером $32\times32$, которое предварительно преобразуется в такой формат, если нужно. Рассмотрим вкратце слои сети:</p>
 
 <ul>
-  <li><em>Свёрточный слой</em> (CONVOLUTION) — как видно из названия, является основной частью CNN. Он реализует обычную операцию свёртки: мы идём по изображению скользящим окном, перемножаем значения в окне с заданными весами, а затем всё складываем. Наборов весов может быть несколько. Проиллюстрируем то, что делает свёрточный слой (картинка взята с <a href="http://habrahabr.ru/">хабра</a>):</li>
+  <li><em>Свёрточный слой</em> (CONVOLUTION) — как видно из названия, является основной частью CNN. Он реализует обычную операцию свёртки: мы идём по изображению скользящим окном, перемножаем значения в окне с заданными весами (ядром), а затем всё складываем. Наборов весов может быть несколько. Проиллюстрируем то, что делает свёрточный слой (картинка взята с <a href="http://habrahabr.ru/">хабра</a>):</li>
 </ul>
 
 <p><img src="/images/cnn_principle.png" title="Свёртка" ></p>
@@ -100,7 +100,7 @@
 
 <ul>
   <li>
-    <p><em>Pooling</em> (POOLING) — служит для уменьшения размерности. Входной двумерный массив делится на сектора, в зависимости от параметров, и в каждом из них происходит максимизация или усреднение (два самых распространённых вида pooling’а).</p>
+    <p><em>Pooling</em> (POOLING) — служит для уменьшения размерности. Входной двумерный массив делится на сектора, в зависимости от параметров, и в каждом из них происходит максимизация (MAX) или усреднение (AVE) (два самых распространённых вида pooling’а).</p>
   </li>
   <li>
     <p><em>Dropout</em> (DROPOUT) — недавно открытый, очень эффективный и простой способ регуляризации (т.е. снижения эффекта переобучения). Его суть заключается в том, что с заданной вероятностью нейроны сети отключаются и не участвуют в текущей итерации обучения.</p>
@@ -109,20 +109,71 @@
 
 <p>Архитектура всей сети представляет собой 3 больших последовательно соединённых слоя, каждый из которых состоит из [CONVOLUTION -&gt; RELU -&gt; CONVOLUTION -&gt; RELU -&gt; CONVOLUTION -&gt; RELU -&gt; POOLING -&gt; DROPOUT]. На самом последнем слое мы получаем две вероятности. Назовём эту сеть <em>Main CNN</em>.</p>
 
-<article>
-<h3>Структура Main CNN</h3>
-<h4>(при наведении на слой отображаются его параметры)</h4> 
+<h4>Структура Main CNN (при наведении на слой отображаются его параметры)</h4>
 
-<div id="container" align="center">     
+<div id="container">     
 </div>
-        
-</article>
 
 <script type="text/javascript">
-        
-var margin = {top: 30, right: 0, bottom: 20, left: 10}
 
-var width = 640 - margin.left - margin.right
+function removetooltips () {
+  $('.tooltip').each(function() {
+    $(this).remove();
+  }); 
+}
+
+function showtooltip (d) {
+  $(this).tooltip({
+	animation: true,  
+    placement: 'auto right',
+    container: 'body',
+    trigger: 'manual',
+    html : true,
+    title: function() { 
+	  var info
+	  
+	  if (d.type == "DATA"){
+	          info = d.description
+          }
+      else{    
+      info = 
+      "<strong>Название</strong>: " + d.name + "<br><strong>Тип</strong>: " + d.type;
+      
+      if (d.type=="CONVOLUTION"){
+			  info+=
+			  '<hr><em>Параметры слоя:</em><br>'+"<strong>Число элементов на выходе</strong>: "+d.convolution_param.num_output
+			  +'<br>'+"<strong>Размер ядра</strong>: "+d.convolution_param.kernel_size
+			  +'<br>'+"<strong>Инициализация весов</strong>: "+d.convolution_param.weight_filler.type
+			  +'<br>'+"<strong>Инициализация смещения</strong>: "+d.convolution_param.bias_filler.type
+			  ;
+		  }
+		  
+	 if (d.type=="POOLING"){
+			  info +=
+			  '<hr><em>Параметры слоя:</em><br>'+"<strong>Тип pooling'а</strong>: "+d.pooling_param.pool
+			  +'<br>'+"<strong>Размер ядра</strong>: "+d.pooling_param.kernel_size
+			  +'<br>'+"<strong>Шаг</strong>: "+d.pooling_param.stride
+			  ;
+		  }
+		  
+		  if (d.type=="DROPOUT"){
+			  info+='<hr><em>Параметры слоя:</em><br>'+"<strong>Вероятность dropout'а</strong>: "+d.dropout_param.dropout_ratio
+			  ;
+		  }	  
+        }
+      
+      
+      return info;
+      }
+  });
+  $(this).tooltip('show')
+}
+
+
+        
+var margin = {top: 0, right: 0, bottom: 20, left: 10}
+
+var width = 700 - margin.left - margin.right
 var height = 640 - margin.top - margin.bottom
 
 var svg = d3.select("#container").append("svg")
@@ -196,15 +247,23 @@ layer.append("text")
 	.style("text-anchor", "middle")
 	.text(function(d){return d.name})
 
-layer.on("mouseover", function(d,i) { d3.select(this).select(".layerrect")
-			                                              .attr( "width", w+10)
-			                                              ; } )
-     .on("mouseout", function() { d3.select( this ).select(".layerrect").transition()
-			                                                .ease("elastic")
-			                                                .attr( "width", w)
-			                                                ;} )
-
-
+layer.on("mouseover", function(d,i) { 
+									d3.select(this).select(".layerrect")
+												   .attr( "width", w+10);
+									showtooltip.call(this, d);                  
+			                                               } )
+     .on("mouseout", function() { 
+	     							d3.select( this ).select(".layerrect")
+	     											 .transition()
+			                                         .ease("elastic")
+			                                         .attr( "width", w);
+			                        removetooltips();
+			                                                } )
+			                                                
+/*			                                                
+layer.on("mouseover", function (d) { showtooltip.call(this, d); })
+   .on("mouseout",  function (d) { removetooltips(); })
+/*
 //Tipsy  			
                 $('svg .layer').tipsy({ 
         gravity: 'w', 
@@ -218,31 +277,34 @@ layer.on("mouseover", function(d,i) { d3.select(this).select(".layerrect")
           }
           else{
           info = '<font size="2">'
-          +"<strong>Название</strong>: "+d.name
-          +'</br>'+"<strong>Тип</strong>: "+d.type;
+          +"<strong>name</strong>: "+d.name
+          +'</br>'+"<strong>type</strong>: "+d.type
+          +'</br>'+"<strong>top</strong>: "+d.top
+		  +'</br>'+"<strong>bottom</strong>: "+d.bottom;
 		  }
 		  
 		  
 		  if (d.type=="CONVOLUTION"){
-			  info+="<hr><em>Параметры слоя:</em>"
-			  +'</br>'+"<strong>Число элементов на выходе</strong>: "+d.convolution_param.num_output
-			  +'</br>'+"<strong>Размер ядра</strong>: "+d.convolution_param.kernel_size
-			  +'</br>'+"<strong>Инициализация весов</strong>: "+d.convolution_param.weight_filler.type
-			  +'</br>'+"<strong>Инициализация смещения</strong>: "+d.convolution_param.bias_filler.type
+			  info+="<hr><em>convolution_param:</em>"
+			  +'</br>'+"<strong>num_output</strong>: "+d.convolution_param.num_output
+			  +'</br>'+"<strong>kernel_size</strong>: "+d.convolution_param.kernel_size
+			  +'</br>'+"<strong>weight_filler.type</strong>: "+d.convolution_param.weight_filler.type
+			  +'</br>'+"<strong>weight_filler.std</strong>: "+d.convolution_param.weight_filler.std
+			  +'</br>'+"<strong>bias_filler.type</strong>: "+d.convolution_param.bias_filler.type
 			  ;
 		  }
 		  
 		  if (d.type=="POOLING"){
-			  info+="<hr><em>Параметры слоя:</em>"
-			  +'</br>'+"<strong>Тип pooling'а</strong>: "+d.pooling_param.pool
-			  +'</br>'+"<strong>Размер ядра</strong>: "+d.pooling_param.kernel_size
-			  +'</br>'+"<strong>Шаг</strong>: "+d.pooling_param.stride
+			  info+="<hr><em>pooling_params:</em>"
+			  +'</br>'+"<strong>pool</strong>: "+d.pooling_param.pool
+			  +'</br>'+"<strong>kernel_size</strong>: "+d.pooling_param.kernel_size
+			  +'</br>'+"<strong>stride</strong>: "+d.pooling_param.stride
 			  ;
 		  }
 		  
 		  if (d.type=="DROPOUT"){
-			  info+="<hr><em>Параметры слоя:</em>"
-			  +'</br>'+"<strong>Вероятность dropout'а</strong>: "+d.dropout_param.dropout_ratio
+			  info+="<hr><em>dropout_param:</em>"
+			  +'</br>'+"<strong>dropout_ratio</strong>: "+d.dropout_param.dropout_ratio
 			  ;
 		  }
 		  
@@ -251,6 +313,7 @@ layer.on("mouseover", function(d,i) { d3.select(this).select(".layerrect")
           return info;
         }
       }); 
+      */
 
 	return data;	
 })
@@ -260,7 +323,7 @@ layer.on("mouseover", function(d,i) { d3.select(this).select(".layerrect")
 
 <p><a href="https://github.com/andrewbo29/traffic_signs_detector/blob/master/model/signet_nin_finetune_train_val.prototxt">Полное описание свёрточной нейронной сети</a> в формате prototxt, которое применятся для её обучения с помощью Caffe.</p>
 
-<p>Для того, чтобы обучить всю эту сеть будем использовать стандартный метод оптимизации <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent">Batch stochastic gradient descent</a> с уменьшением параметра learning rate в 10 раз каждые 1000 шагов, начальный learning rate — 0.000001. Кроме того, применим метод Momentum Нестерова с параметром 0.9. В качестве регуляризации будем использовать <a href="https://en.wikipedia.org/wiki/Regularization_(mathematics)">Weight decay</a> с параметром 0.0001. Обучение будет остановлено или при достижении максимального количества итераций, или при малом изменении функции потерь. Prototxt файл со всеми параметрами оптимизации, который используется в Caffe:</p>
+<p>Для того, чтобы обучить всю эту сеть, будем использовать стандартный метод оптимизации <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent">Batch stochastic gradient descent</a> с уменьшением параметра learning rate в 10 раз каждые 1000 шагов, начальный learning rate — 0.000001. Кроме того, применим метод Momentum Нестерова с параметром 0.9. В качестве регуляризации будем использовать <a href="https://en.wikipedia.org/wiki/Regularization_(mathematics)">Weight decay</a> с параметром 0.0001. Обучение будет остановлено или при достижении максимального количества итераций, или при малом изменении функции потерь. Prototxt файл со всеми параметрами оптимизации, который используется в Caffe:</p>
 
 <p><code>json Solver
 test_iter: 100
@@ -281,7 +344,9 @@ solver_mode: GPU
 
 <h3 id="features-learning-cnn">Features learning CNN</h3>
 
-<p>Итак, с помощью описанной выше CNN мы отберём области изображения, скорее всего содержащие знак (т.е. те, для которых вероятность наличия знака, выданная сетью, больше порога 0.5). Для того, чтобы улучшить качество распознавания, построим поверх нейронной сети ещё один классификатор. Для этого будем использовать CNN, аналогичную той, которую мы уже построили, только без последнего слоя вероятностей. Если посмотреть на параметры в описании архитектуры используемой CNN, то от туда можно понять, что новая сеть будет выдавать на выходе вектор размерности 128. Назовём её <em>Features learning CNN</em>. В качестве весов она использует натренированные веса Main CNN. Features learning CNN мы будем применять к областям изображений, которые по мнению Main CNN содержат дорожный знак.  Мы получим 128-размерный вектор признаков, который будем “скармливать” машине опорных векторов (SVM) с полиномиальным ядром степени 2 и параметром регуляризации 0.1. Таким образом, полный алгоритм представляет собой ансамбль:</p>
+<p>Итак, с помощью описанной выше CNN мы отберём области изображения, скорее всего содержащие знак (т.е. те, для которых вероятность наличия знака, выданная сетью, больше порога 0.5). Для того, чтобы улучшить качество распознавания, построим поверх нейронной сети ещё один классификатор. Для этого будем использовать CNN, аналогичную той, которую мы уже построили, только без последних двух слоёв pooling’а и вероятностей. Если посмотреть на параметры в описании архитектуры используемой CNN, то от туда можно понять, что новая сеть будет выдавать на выходе вектор размерности 128. Назовём её <em>Features learning CNN</em>. В качестве весов она использует натренированные веса Main CNN. Features learning CNN мы будем применять к областям изображений, которые по мнению Main CNN содержат дорожный знак.  Мы получим 128-размерный вектор признаков, который будем “скармливать” машине опорных векторов (SVM) с полиномиальным ядром степени 2 и параметром регуляризации 0.1.</p>
+
+<p>Таким образом, полный алгоритм представляет собой ансамбль:</p>
 
 <p><img src="/images/pipeline.png" title="Pipeline" ></p>
 
@@ -315,9 +380,9 @@ solver_mode: GPU
 
 <p><img src="/images/train_main_cnn_new_minus.png" title="Новые отрицательные прецеденты" ></p>
 
-<p>При обучении SVM на изначальных тренировочных данных Main CNN результаты следующие: F1-score — 0.85, Точность — 0.85.</p>
+<p>При обучении SVM на изначальных тренировочных данных Main CNN результаты следующие: F1-score — 0.85, точность — 0.85.</p>
 
-<p>После тренировки всех частей ансамбля алгоритмов мы можем применить их к тестовым данным. В качестве метрики точности для изображений, содержащих дорожные знаки, возьмём наименьшее евклидово расстояние между векторами, описывающими ROI. Это не самая точная метрика, однако она даёт представление о качестве работы метода. Результаты на тестовых данных (300 изображений): 39.9, число случаев, когда алгоритм не показал ROI, а они есть (False negative): 33, число случаев, когда алгоритм показал ROI, а их нет (False positive): 5. Ниже представлено несколько характерных примеров работы алгоритма.</p>
+<p>После тренировки всех частей ансамбля алгоритмов мы можем применить их к тестовым данным. В качестве метрики точности для изображений, содержащих дорожные знаки, возьмём наименьшее евклидово расстояние между векторами, описывающими ROI. Это не самая точная метрика, однако она даёт представление о качестве работы метода. Результаты на тестовых данных (300 изображений): 39.9; число случаев, когда алгоритм не показал ROI, а они есть (False negative): 33; число случаев, когда алгоритм показал ROI, а их нет (False positive): 5. Ниже представлено несколько характерных примеров работы алгоритма.</p>
 
 <p>Все знаки правильно обнаружены:</p>
 
