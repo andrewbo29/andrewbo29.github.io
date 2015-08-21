@@ -76,7 +76,7 @@
   "weight_decay": 1,
   "weight_decay": 0,
   "convolution_param":{
-    "num_output": 160,
+    "num_output": 96,
     "group": 1,
     "kernel_size": 1,
     "weight_filler":{
@@ -161,7 +161,7 @@
   "weight_decay": 1,
   "weight_decay": 0,
   "convolution_param":{
-    "num_output": 160,
+    "num_output": 192,
     "group": 1,
     "kernel_size": 1,
     "weight_filler":{
@@ -192,7 +192,7 @@
   "weight_decay": 1,
   "weight_decay": 0,
   "convolution_param":{
-    "num_output": 160,
+    "num_output": 192,
     "group": 1,
     "kernel_size": 1,
     "weight_filler":{
@@ -221,7 +221,7 @@
   "bottom": "cccp2",
   "top": "pool1",
   "pooling_param": {
-    "pool": "MAX",
+    "pool": "AVE",
     "kernel_size": 3,
     "stride": 2
   }
@@ -248,8 +248,8 @@
   "weight_decay": 0,
   "convolution_param":{
     "num_output": 192,
-    "pad": 2,
-    "kernel_size": 5,
+    "pad": 1,
+    "kernel_size": 3,
     "weight_filler":{
       "type": "gaussian",
       "std": 0.05
@@ -277,7 +277,7 @@
   "weight_decay": 1,
   "weight_decay": 0,
   "convolution_param":{
-    "num_output": 160,
+    "num_output": 192,
     "group": 1,
     "kernel_size": 1,
     "weight_filler":{
@@ -308,7 +308,7 @@
   "weight_decay": 1,
   "weight_decay": 0,
   "convolution_param":{
-    "num_output": 160,
+    "num_output": 2,
     "group": 1,
     "kernel_size": 1,
     "weight_filler":{
@@ -337,9 +337,9 @@
   "bottom": "cccp2",
   "top": "pool1",
   "pooling_param": {
-    "pool": "MAX",
-    "kernel_size": 3,
-    "stride": 2
+    "pool": "AVE",
+    "kernel_size": 8,
+    "stride": 1
   }
 },
 
