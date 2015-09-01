@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://datadeep.ru/blog/2015/08/16/dietiektirovaniie-dorozhnykh-znakov-s-pomoshch&#8217;iu-deep-learning/</loc>
-    <lastmod>2015-08-16T23:36:02+03:00</lastmod>
+    <loc>http://datadeep.ru/blog/2015/09/01/mnoghoobraziie-vizualizatsii/</loc>
+    <lastmod>2015-09-01T20:52:27+03:00</lastmod>
   </url>
   <url>
     <loc>http://datadeep.ru/</loc>
@@ -14,13 +14,7 @@
     <loc>http://datadeep.ru/about_blog/</loc>
   </url>
   <url>
-    <loc>http://datadeep.ru/blog/categories/mashinnoie-obuchieniie/</loc>
-  </url>
-  <url>
-    <loc>http://datadeep.ru/blog/categories/deep-learning/</loc>
-  </url>
-  <url>
-    <loc>http://datadeep.ru/blog/categories/komp&#8217;iutiernoie-zrieniie/</loc>
+    <loc>http://datadeep.ru/blog/categories/vizualizatsiia/</loc>
   </url>
   <url>
     <loc>http://datadeep.ru/downloads/code/signet_nin_finetune_deploy.html</loc>
