@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Ищем темы в Игре Престолов"
+title: "Поиск тем в Игре Престолов"
 date: 2015-09-13 14:54:20 +0300
 comments: true
-categories: 
+categories:
 author: Alexander Senov
 description: Основы тематического моделирования на примере текста книг серии "Песнь Льда и Пламени"
 keywords: visualization
