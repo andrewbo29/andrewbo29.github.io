@@ -1,6 +1,6 @@
 
 
-wordScale=d3.scale.linear().domain([-0.8, -0.3, -0.1, -0.01, 0.01, 0.1, 0.3, 0.8]).range([-95, 60, -30, -10, 10, 30, 60, 95]).clamp(true);
+wordScale=d3.scale.linear().domain([-0.8, -0.3, -0.1, -0.01, 0.01, 0.1, 0.3, 0.8]).range([-85, 50, -20, -10, 10, 20, 50, 85]).clamp(true);
 wordColor=d3.scale.linear().domain([-1, 1]).range(["red","green"]);
 
 function topic_clouds(topic_words_csv, element_id_positive, element_id_negative) {
