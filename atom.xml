@@ -4,7 +4,7 @@
   <title><![CDATA[DataDeep Evil Twin]]></title>
   <link href="http://datadeep.ru/atom.xml" rel="self"/>
   <link href="http://datadeep.ru/"/>
-  <updated>2015-10-05T00:56:30+03:00</updated>
+  <updated>2015-10-05T01:15:15+03:00</updated>
   <id>http://datadeep.ru/</id>
   <author>
     <name><![CDATA[Команда datadeep.ru]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Тематическое моделирование Игры Престолов]]></title>
-    <link href="http://datadeep.ru/blog/2015/10/02/tiematichieskoie-modielirovaniie-ighry-priestolov/"/>
-    <updated>2015-10-02T23:59:59+03:00</updated>
-    <id>http://datadeep.ru/blog/2015/10/02/tiematichieskoie-modielirovaniie-ighry-priestolov</id>
+    <link href="http://datadeep.ru/blog/2015/10/05/tiematichieskoie-modielirovaniie-ighry-priestolov/"/>
+    <updated>2015-10-05T23:59:59+03:00</updated>
+    <id>http://datadeep.ru/blog/2015/10/05/tiematichieskoie-modielirovaniie-ighry-priestolov</id>
     <content type="html"><![CDATA[<div>
   <style type="text/css">
 
@@ -606,7 +606,7 @@ K < N, M %]]&gt;</script> и воспользоваться truncated SVD:</p>
 </span><span class="line">Книга 5, Глава 10, Давос
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h3 id="vs-">Тема 3. Кхалиси vs ???</h3>
+<h3 id="section-10">Тема 3. Узкое море</h3>
 
 <p><img src="http://datadeep.ru/images/2015-09_TopicModelling_GameOfThrones/GoT_topic_3.png" width="768" height="576" title="Основные слова темы 3" /></p>
 
@@ -879,7 +879,7 @@ K < N, M %]]&gt;</script> и воспользоваться truncated SVD:</p>
 </span><span class="line">Книга 3, Глава 23, Джейме
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h1 id="section-10">Заключение</h1>
+<h1 id="section-11">Заключение</h1>
 
 <p>Мы рассмотрели теорию и практику тематического моделирования, а точнее метода LSA. Более того, мы применили его на тексте книг серии “Песнь Льда и Пламени” и получили очень даже неплохой результат! Действительно: рассмотренные нами темы естественно интерпретируются и довольно-таки неплохо описывают взаимодействия персонажей игры престолов. Еще более удивительно, что имена персонажей оказываются наиболее важными для определения тем, впрочем возможные причиные этого мы обсудили.</p>
 
