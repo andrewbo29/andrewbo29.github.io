@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[DataDeep Evil Twin]]></title>
-  <link href="http://datadeep.ru/atom.xml" rel="self"/>
+  <title><![CDATA[Категория: Машинное обучение | DataDeep Evil Twin]]></title>
+  <link href="http://datadeep.ru/blog/categories/mashinnoie-obuchieniie/atom.xml" rel="self"/>
   <link href="http://datadeep.ru/"/>
   <updated>2015-10-05T00:56:30+03:00</updated>
   <id>http://datadeep.ru/</id>
@@ -35,7 +35,7 @@
 
 <p>Когда мы имеем дело с большим количеством текстовых документов, первое что нас интересует — о чем эти документы: есть ли между ними что-то общее, о чем каждый из документов, о чем они в целом? Попробуем ответить на эти вопросы, воспользовавшись инструментарием науки о данных. Да не просто так, а на примере серии книг “Песнь Льда и Пламени” (кратко, ПЛиО), по мотивом которой снят не безызвестный сериал “Игра Престолов”.</p>
 
-<p><img src="http://datadeep.ru/images/2015-09_TopicModelling_GameOfThrones/GameOfThrones_tag_cloud.jpg" width="768" height="576" title="КДПВ" /></p>
+<p><img src="/images/2015-09_TopicModelling_GameOfThrones/GameOfThrones_tag_cloud.jpg" width="768" height="576" title="КДПВ" ></p>
 
 <!-- more -->
 
@@ -75,7 +75,7 @@
 <p>Перевод окончен! Теперь наш текстовый корпус представлен в виде матрицы <script type="math/tex">\mathbf{X}</script>. 
 В результате получится матрица выглядящая примерно следующим образом.</p>
 
-<p><img src="http://datadeep.ru/images/2015-09_TopicModelling_GameOfThrones/GameOfThrones_X_matrix_vis.svg" width="384" height="288" title="Матрица документ-слово" /></p>
+<p><img src="/images/2015-09_TopicModelling_GameOfThrones/GameOfThrones_X_matrix_vis.svg" width="384" height="288" title="Матрица документ-слово" ></p>
 
 <p>Стоит заметить, что подобная модель под собой имеет два основных предположения.</p>
 
@@ -186,7 +186,7 @@ K < N, M %]]&gt;</script> и воспользоваться truncated SVD:</p>
 
 <p>Для наглядности мы проиллюстрировали сокращенное сингулярное разложение матрицы документ-слово (крестиками обозначены ненулевые значения).</p>
 
-<p><img src="http://datadeep.ru/images/2015-09_TopicModelling_GameOfThrones/GameOfThrones_SVD_vis.svg" width="768" height="576" title="SVD матрицы документ-слово" /></p>
+<p><img src="/images/2015-09_TopicModelling_GameOfThrones/GameOfThrones_SVD_vis.svg" width="768" height="576" title="SVD матрицы документ-слово" ></p>
 
 <p>Стоит отметить, что согласно пятому свойству, “больше” стоит понимать в абсолютном смысле, ведть большое отрицательно число можно легко превратить в большое положительно, домножив соответствующие вектора <script type="math/tex">u_t, v_t</script> на -1.</p>
 
@@ -220,55 +220,35 @@ K < N, M %]]&gt;</script> и воспользоваться truncated SVD:</p>
 
 <p>На примере первой книги “Игре Престолов”:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Игра_Престолов</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">0. Пролог 2925
-</span><span class="line">1. Бран 2295
-</span><span class="line">2. Кейтилин 1643
-</span><span class="line">3. Дейенерис 3284
-</span><span class="line">4. Эддард 3068
-</span><span class="line">...
-</span><span class="line">68. Дейенерис 3273
-</span><span class="line">69. Тирион 2738
-</span><span class="line">70. Джон 3909
-</span><span class="line">71. Кейтилин 3641
-</span><span class="line">72. Дейенерис 2738
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Игра_Престолов
+0. Пролог 2925
+1. Бран 2295
+2. Кейтилин 1643
+3. Дейенерис 3284
+4. Эддард 3068
+...
+68. Дейенерис 3273
+69. Тирион 2738
+70. Джон 3909
+71. Кейтилин 3641
+72. Дейенерис 2738
+</code></p>
 
 <p>и последней на данный момент книге серии — 2-го тома “Танца с Драконами”:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Танец_с_Драконами_2</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">0. Принц Винтерфелла 4564
-</span><span class="line">1. Страж 3891
-</span><span class="line">2. Джон 2532
-</span><span class="line">3. Тирион 3033
-</span><span class="line">4. Переметчивый 3441
-</span><span class="line">...
-</span><span class="line">31. Укротитель драконов 2584
-</span><span class="line">32. Джон 3897
-</span><span class="line">33. Десница королевы 4106
-</span><span class="line">34. Дейенерис 3775
-</span><span class="line">35. Эпилог 4518
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Танец_с_Драконами_2
+0. Принц Винтерфелла 4564
+1. Страж 3891
+2. Джон 2532
+3. Тирион 3033
+4. Переметчивый 3441
+...
+31. Укротитель драконов 2584
+32. Джон 3897
+33. Десница королевы 4106
+34. Дейенерис 3775
+35. Эпилог 4518
+</code></p>
 
 <p>Судя по списку глав все верно — текст мы распарсили правильно, двигаемся дальше. Далее нам нужна коллекция документов. В данном случае документы напрашиваются сами собой: возьмем главы каждой книги. Итого у нас получится 345 документов — не так уже и много, но документы внушительных размеров.</p>
 
@@ -278,156 +258,119 @@ K < N, M %]]&gt;</script> и воспользоваться truncated SVD:</p>
 <p>Как мы помним, первый этап LSA — перевод документов в векторный вид. 
 Начнем с разбиения наших документов на слова и последующий их стемминг</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Разбиение документов на слова</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="kn">import</span> <span class="nn">re</span>
-</span><span class="line"><span class="n">non_letter_rgxp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">u&#39;[^а-яА-Я ]&#39;</span><span class="p">)</span>
-</span><span class="line">
-</span><span class="line"><span class="n">remove_non_letters</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">doc</span><span class="p">:</span> <span class="n">non_letter_rgxp</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
-</span><span class="line">
-</span><span class="line"><span class="kn">import</span> <span class="nn">nltk</span>
-</span><span class="line"><span class="kn">from</span> <span class="nn">nltk.stem.snowball</span> <span class="kn">import</span> <span class="n">SnowballStemmer</span>
-</span><span class="line">
-</span><span class="line"><span class="n">stemmer</span> <span class="o">=</span> <span class="n">SnowballStemmer</span><span class="p">(</span><span class="s">&quot;russian&quot;</span><span class="p">)</span>
-</span><span class="line">
-</span><span class="line"><span class="k">def</span> <span class="nf">stem</span><span class="p">(</span><span class="n">tokens</span><span class="p">):</span>
-</span><span class="line">    <span class="k">return</span> <span class="p">(</span><span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">)</span>
-</span><span class="line">
-</span><span class="line"><span class="n">docs_tokens</span> <span class="o">=</span> <span class="p">[</span>
-</span><span class="line">    <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="p">,</span> <span class="n">stem</span><span class="p">(</span><span class="n">remove_non_letters</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">))))</span>
-</span><span class="line">    <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span>
-</span><span class="line"><span class="p">]</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>&#8220;`python Разбиение документов на слова
+import re
+non_letter_rgxp = re.compile(u’[^а-яА-Я ]’)</p>
+
+<p>remove_non_letters = lambda doc: non_letter_rgxp.sub(‘ ‘, doc.lower())</p>
+
+<p>import nltk
+from nltk.stem.snowball import SnowballStemmer</p>
+
+<p>stemmer = SnowballStemmer(“russian”)</p>
+
+<p>def stem(tokens):
+    return (stemmer.stem(t) for t in tokens)</p>
+
+<p>docs_tokens = [
+    list(filter(lambda w: w, stem(remove_non_letters(doc.lower()).split(‘ ‘))))
+    for doc in docs
+]
+&#8220;`</p>
 
 <p>Теперь, посчитаем частоту слов</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Подсчет частоты слов</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="kn">import</span> <span class="nn">collections</span>
-</span><span class="line"><span class="n">token_frequency_dict</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
-</span><span class="line"><span class="k">for</span> <span class="n">tokens</span> <span class="ow">in</span> <span class="n">docs_tokens</span><span class="p">:</span>
-</span><span class="line">    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">:</span>
-</span><span class="line">        <span class="n">token_frequency_dict</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>python Подсчет частоты слов
+import collections
+token_frequency_dict = collections.defaultdict(lambda: 0)
+for tokens in docs_tokens:
+    for t in tokens:
+        token_frequency_dict[t] += 1
+</code></p>
 
 <p>Взглянем на наиболее часто встречающиеся слова</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Самые частые слова</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">400392 и
-</span><span class="line">271847 он
-</span><span class="line">261481 не
-</span><span class="line">239817 в
-</span><span class="line">187947 на
-</span><span class="line">134724 с
-</span><span class="line">129038 что
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Самые частые слова
+400392 и
+271847 он
+261481 не
+239817 в
+187947 на
+134724 с
+129038 что
+</code></p>
 
 <p>.., и на самые редкие</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Самые редкие слова</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">3 линнистер
-</span><span class="line">3 близя
-</span><span class="line">3 персонаж
-</span><span class="line">3 нервнич
-</span><span class="line">3 свежеоперен
-</span><span class="line">3 прожиг
-</span><span class="line">3 долженствова
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Самые редкие слова
+3 линнистер
+3 близя
+3 персонаж
+3 нервнич
+3 свежеоперен
+3 прожиг
+3 долженствова
+</code></p>
 
 <p>Как видно, среди часто встречающихся слов довольно много бессмысленных “коротышек”: “а”, “и”, “не” и т.п. От редких же слов больше вреда, чем пользы: они раздувают словарь слов (а значит и размерность будущей матрицы <script type="math/tex">X</script>, делая вычисления более сложными), а в определении темы вряд ли помогут, так как встречаются в считанном числе документов.</p>
 
 <p>Решено! Отфильтруем самые редкие слова, а так же слова маленькой длины:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Фильтрация корпуса по словам</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="n">docs_tokens_filtered</span> <span class="o">=</span> <span class="p">[</span>
-</span><span class="line">    <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">token_frequency_dict</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="n">tokens</span><span class="p">)</span>
-</span><span class="line">    <span class="k">for</span> <span class="n">tokens</span> <span class="ow">in</span> <span class="n">docs_tokens</span>
-</span><span class="line"><span class="p">]</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>python Фильтрация корпуса по словам
+docs_tokens_filtered = [
+    filter(lambda t: token_frequency_dict[t] &gt; 5 and len(t) &gt; 2, tokens) 
+    for tokens in docs_tokens
+]
+</code></p>
 
 <p>Остается перевести наши разбитые на слова и отфильтрованные документы в векторный вид. Следующий блок кода делает именно это.</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Перевод текстовых документов в матрицу частот документ-слов </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-<span class="line-number">21</span>
-<span class="line-number">22</span>
-<span class="line-number">23</span>
-</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="kn">import</span> <span class="nn">itertools</span>
-</span><span class="line"><span class="kn">import</span> <span class="nn">scipy</span> <span class="kn">as</span> <span class="nn">sp</span>
-</span><span class="line"><span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">iterators_iterator</span><span class="p">):</span>
-</span><span class="line">    <span class="k">return</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">iterators_iterator</span><span class="p">)</span>
-</span><span class="line">
-</span><span class="line"><span class="n">all_tokens</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">flatten</span><span class="p">(</span><span class="n">paragraphs_tokens_filtered</span><span class="p">))</span>
-</span><span class="line">
-</span><span class="line"><span class="n">id_token_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">all_tokens</span><span class="p">))</span>
-</span><span class="line"><span class="n">token_id_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(((</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">id_token_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
-</span><span class="line">
-</span><span class="line"><span class="k">def</span> <span class="nf">doc2vec</span><span class="p">(</span><span class="n">doc_tokens</span><span class="p">,</span> <span class="n">token_id_dict</span><span class="p">):</span>
-</span><span class="line">    <span class="n">id_cnt_dict</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">((</span><span class="n">token_id_dict</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">doc_tokens</span><span class="p">))</span>
-</span><span class="line">    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">id_cnt_dict</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
-</span><span class="line">
-</span><span class="line"><span class="k">def</span> <span class="nf">docs2csr_matrix</span><span class="p">(</span><span class="n">docs_tokens</span><span class="p">,</span> <span class="n">token_id_dict</span><span class="p">):</span>
-</span><span class="line">    <span class="n">docs_vecs</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc2vec</span><span class="p">(</span><span class="n">doc_tokens</span><span class="p">,</span> <span class="n">token_id_dict</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc_tokens</span> <span class="ow">in</span> <span class="n">docs_tokens</span><span class="p">]</span>
-</span><span class="line">    <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">flatten</span><span class="p">((((</span><span class="n">id_cnt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">id_cnt</span> <span class="ow">in</span> <span class="n">doc_vec</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc_vec</span> <span class="ow">in</span> <span class="n">docs_vecs</span><span class="p">))))</span>
-</span><span class="line">    <span class="n">row_ind</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">flatten</span><span class="p">((((</span><span class="n">doc_ind</span> <span class="k">for</span> <span class="n">id_cnt</span> <span class="ow">in</span> <span class="n">doc_vec</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc_ind</span><span class="p">,</span> <span class="n">doc_vec</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">docs_vecs</span><span class="p">)))))</span>
-</span><span class="line">    <span class="n">col_ind</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">flatten</span><span class="p">((((</span><span class="n">id_cnt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">id_cnt</span> <span class="ow">in</span> <span class="n">doc_vec</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc_vec</span> <span class="ow">in</span> <span class="n">docs_vecs</span><span class="p">))))</span>
-</span><span class="line">    <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">((</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="n">row_ind</span><span class="p">,</span> <span class="n">col_ind</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-</span><span class="line">
-</span><span class="line">
-</span><span class="line"><span class="n">X</span> <span class="o">=</span> <span class="n">docs2csr_matrix</span><span class="p">(</span><span class="n">docs_tokens_filtered</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><figure class='code'><figcaption><span>Перевод текстовых документов в матрицу частот документ-слов </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">itertools</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">scipy</span> <span class="kn">as</span> <span class="nn">sp</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">iterators_iterator</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">iterators_iterator</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">all_tokens</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">flatten</span><span class="p">(</span><span class="n">paragraphs_tokens_filtered</span><span class="p">))</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">id_token_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">all_tokens</span><span class="p">))</span>
+</span><span class='line'><span class="n">token_id_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(((</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">id_token_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">doc2vec</span><span class="p">(</span><span class="n">doc_tokens</span><span class="p">,</span> <span class="n">token_id_dict</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">id_cnt_dict</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">((</span><span class="n">token_id_dict</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">doc_tokens</span><span class="p">))</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">id_cnt_dict</span><span class="o">.</span><span class="n">items</span><span class="p">())</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">docs2csr_matrix</span><span class="p">(</span><span class="n">docs_tokens</span><span class="p">,</span> <span class="n">token_id_dict</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">docs_vecs</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc2vec</span><span class="p">(</span><span class="n">doc_tokens</span><span class="p">,</span> <span class="n">token_id_dict</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc_tokens</span> <span class="ow">in</span> <span class="n">docs_tokens</span><span class="p">]</span>
+</span><span class='line'>    <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">flatten</span><span class="p">((((</span><span class="n">id_cnt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">id_cnt</span> <span class="ow">in</span> <span class="n">doc_vec</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc_vec</span> <span class="ow">in</span> <span class="n">docs_vecs</span><span class="p">))))</span>
+</span><span class='line'>    <span class="n">row_ind</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">flatten</span><span class="p">((((</span><span class="n">doc_ind</span> <span class="k">for</span> <span class="n">id_cnt</span> <span class="ow">in</span> <span class="n">doc_vec</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc_ind</span><span class="p">,</span> <span class="n">doc_vec</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">docs_vecs</span><span class="p">)))))</span>
+</span><span class='line'>    <span class="n">col_ind</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">flatten</span><span class="p">((((</span><span class="n">id_cnt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">id_cnt</span> <span class="ow">in</span> <span class="n">doc_vec</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc_vec</span> <span class="ow">in</span> <span class="n">docs_vecs</span><span class="p">))))</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">((</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="n">row_ind</span><span class="p">,</span> <span class="n">col_ind</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">X</span> <span class="o">=</span> <span class="n">docs2csr_matrix</span><span class="p">(</span><span class="n">docs_tokens_filtered</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>Ура, мы в векторе! Получилась матрица 345 на 11467, идем дальше.</p>
 
@@ -435,28 +378,28 @@ K < N, M %]]&gt;</script> и воспользоваться truncated SVD:</p>
 
 <p>Следующим по списку стоит TFIDF. Воспользуемся собственной реализацией.</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>TFIDF </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="k">def</span> <span class="nf">tfidf</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
-</span><span class="line">    <span class="n">idf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.</span> <span class="o">/</span> <span class="p">((</span><span class="n">X</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.</span>
-</span><span class="line">    <span class="n">idf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">spdiags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">idf</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">diags</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">n</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</span><span class="line">    <span class="k">return</span> <span class="n">X</span> <span class="o">*</span> <span class="n">idf</span>
-</span><span class="line">
-</span><span class="line"><span class="n">X_tfidf</span> <span class="o">=</span> <span class="n">tfidf</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><figure class='code'><figcaption><span>TFIDF </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">tfidf</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">idf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.</span> <span class="o">/</span> <span class="p">((</span><span class="n">X</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.</span>
+</span><span class='line'>    <span class="n">idf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">spdiags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">idf</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">diags</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">n</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">X</span> <span class="o">*</span> <span class="n">idf</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">X_tfidf</span> <span class="o">=</span> <span class="n">tfidf</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <h2 id="svd">Применение SVD</h2>
 <p>На этот раз свой велосипед писать не будем, воспользуемся готовой реализацией для разряженных матриц (а нас как-раз такая) из пакета <a href="http://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.svds.html">scipy</a>.</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>SVD </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">VT</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svds</span><span class="p">(</span><span class="n">X_tfidf</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><figure class='code'><figcaption><span>SVD </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">VT</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svds</span><span class="p">(</span><span class="n">X_tfidf</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>Вот и все, готово! Давайте посмотрим, какие темы нашел LSA.</p>
 
@@ -464,18 +407,18 @@ K < N, M %]]&gt;</script> и воспользоваться truncated SVD:</p>
 
 <p>Сперва взглянем на сингулярные числа <script type="math/tex">s_t</script> соответствующую вкладу каждой тему в коллекцию</p>
 
-<p><img src="http://datadeep.ru/images/2015-09_TopicModelling_GameOfThrones/GameOfThrones_singular_values_histogram.png" width="768" height="576" /></p>
+<p><img src="/images/2015-09_TopicModelling_GameOfThrones/GameOfThrones_singular_values_histogram.png" width="768" height="576"></p>
 
 <p>Первое собственное число стоит одинокой башней. Неужели есть какая-та настолько “выдающаяся” тема?<br />
 Как мы говорили выше, элементы вектора <script type="math/tex">v_t</script> соответствуют вкладу соответствующих слов в тему <script type="math/tex">t</script>. Посмотрим же на самые большие по модулю элементы вектора <script type="math/tex">v_0</script>. Для наглядности мы изобразили наиболее важные слова вместе с соответствующим им значением <script type="math/tex">v_0^{(w)}</script>:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Основные слова темы 0</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">+0.30*был +0.24*лорд +0.21*сказа +0.19*сир +0.15*джон +0.15*тирион +0.14*рук +0.12*корол +0.11*больш +0.10*нег +0.10*говор +0.10*нет +0.10*глаз +0.09*брат +0.09*джейм +0.09*над +0.09*под +0.09*меч +0.08*черн +0.08*сэм
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Основные слова темы 0
++0.30*был +0.24*лорд +0.21*сказа +0.19*сир +0.15*джон +0.15*тирион +0.14*рук +0.12*корол +0.11*больш +0.10*нег +0.10*говор +0.10*нет +0.10*глаз +0.09*брат +0.09*джейм +0.09*над +0.09*под +0.09*меч +0.08*черн +0.08*сэм
+</code></p>
 
 <p>Кажется удивительным, что все элементы одного знака, ни одного отрицательного! Получается такая тема, которой соответствуют все слова без исключения. Но если подумать, то ничего удивительного в этом нет. Вспомним базовую статистику. Если взять множество чисел, какое число будет минимизировать сумму квадратов расстояний от них? Правильно — их среднее. И здесь та же история: фактически, вектор <script type="math/tex">v_0</script> — это среднее по строкам матрицы <script type="math/tex">X_{tfidf}</script>, то есть вектор средних весов слов в нашем корпусе. По этой же причине у этой темы и столь выдаяющаесе собственной число. Исходя из этого, первая собственная тройка с точки зрения определения темы нам мало полезна, так что отбросим ее и вновь взглянем на график собственных чисел.</p>
 
-<p><img src="http://datadeep.ru/images/2015-09_TopicModelling_GameOfThrones/GameOfThrones_singular_values_histogram_without_1st.png" width="768" height="576" /></p>
+<p><img src="/images/2015-09_TopicModelling_GameOfThrones/GameOfThrones_singular_values_histogram_without_1st.png" width="768" height="576"></p>
 
 <p>Теперь сильно выделяющихся тем нет. Далее пойдем по порядку, рассмотрим слова, образующие темы со 1-й по 7-ю (рассмотренную “среднюю” тему считаем за нулевую).</p>
 
@@ -487,7 +430,7 @@ K < N, M %]]&gt;</script> и воспользоваться truncated SVD:</p>
 
 <h3 id="vs--">Тема 1. За Стеной vs Королевская Гавань</h3>
 
-<p><img src="http://datadeep.ru/images/2015-09_TopicModelling_GameOfThrones/GoT_topic_1.png" width="768" height="576" title="Основные слова темы 1" /></p>
+<p><img src="/images/2015-09_TopicModelling_GameOfThrones/GoT_topic_1.png" width="768" height="576" title="Основные слова темы 1" ></p>
 
 <p>Ого! Почти все самые важные слова темы, что с отрицательные, что положительные — это имена тех или иных персонажей. Похоже наша догадка по поводу того, что лежит в основе различия документов оказалась не далека от истины :). Попробуем проинтерпретировать как “положительную”, так и “отрицательную” часть темы.</p>
 
@@ -497,172 +440,111 @@ K < N, M %]]&gt;</script> и воспользоваться truncated SVD:</p>
 
 <p>Соответствующие этой теме главы лишь подтверждают наши выводы:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Документы темы 1</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">Книга 4, Глава 6, Сэмвел
-</span><span class="line">Книга 3, Глава 20, Сэмвел
-</span><span class="line">Книга 2, Глава 24, Джон
-</span><span class="line">Книга 3, Глава 35, Сэмвел
-</span><span class="line">Книга 5, Глава 8, Джон
-</span><span class="line">Книга 1, Глава 53, Джон
-</span><span class="line">Книга 4, Глава 27, Сэмвел
-</span><span class="line">Книга 3, Глава 48, Сэмвел
-</span><span class="line">Книга 3, Глава 17, Джон
-</span><span class="line">Книга 3, Глава 77, Сэмвел
-</span><span class="line">Книга 1, Глава 27, Джон
-</span><span class="line">Книга 3, Глава 57, Джон
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Документы темы 1
+Книга 4, Глава 6, Сэмвел
+Книга 3, Глава 20, Сэмвел
+Книга 2, Глава 24, Джон
+Книга 3, Глава 35, Сэмвел
+Книга 5, Глава 8, Джон
+Книга 1, Глава 53, Джон
+Книга 4, Глава 27, Сэмвел
+Книга 3, Глава 48, Сэмвел
+Книга 3, Глава 17, Джон
+Книга 3, Глава 77, Сэмвел
+Книга 1, Глава 27, Джон
+Книга 3, Глава 57, Джон
+</code></p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Документы темы 1 &#8220;наоборот&#8221;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">Книга 3, Глава 62, Тирион
-</span><span class="line">Книга 1, Глава 63, Тирион
-</span><span class="line">Книга 3, Глава 68, Тирион
-</span><span class="line">Книга 3, Глава 21, Тирион
-</span><span class="line">Книга 2, Глава 42, Тирион
-</span><span class="line">Книга 1, Глава 39, Тирион
-</span><span class="line">Книга 2, Глава 4, Тирион
-</span><span class="line">Книга 1, Глава 32, Тирион
-</span><span class="line">Книга 4, Глава 28, Джейме
-</span><span class="line">Книга 5, Глава 28, Тирион
-</span><span class="line">Книга 3, Глава 69, Джейме
-</span><span class="line">Книга 4, Глава 25, Серсея
-</span><span class="line">Книга 3, Глава 6, Тирион
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Документы темы 1 "наоборот"
+Книга 3, Глава 62, Тирион
+Книга 1, Глава 63, Тирион
+Книга 3, Глава 68, Тирион
+Книга 3, Глава 21, Тирион
+Книга 2, Глава 42, Тирион
+Книга 1, Глава 39, Тирион
+Книга 2, Глава 4, Тирион
+Книга 1, Глава 32, Тирион
+Книга 4, Глава 28, Джейме
+Книга 5, Глава 28, Тирион
+Книга 3, Глава 69, Джейме
+Книга 4, Глава 25, Серсея
+Книга 3, Глава 6, Тирион
+</code></p>
 
 <h3 id="vs---1">Тема 2. Бес vs Луковый рыцарь</h3>
 
-<p><img src="http://datadeep.ru/images/2015-09_TopicModelling_GameOfThrones/GoT_topic_2.png" width="768" height="576" title="Основные слова темы 2" /></p>
+<p><img src="/images/2015-09_TopicModelling_GameOfThrones/GoT_topic_2.png" width="768" height="576" title="Основные слова темы 2" ></p>
 
 <p>Здесь “позитивная” тема похоже на тему Тириона. Сюда же “затесался” Джон: по сюжету Тирион и Джон Сноу пересекались в 1-ой книге, в Винтерфелле, а так же по дороге и на самой Стене. 
 Но, если взглянуть на cоответствующие документы, то помимо 1-ой главы можно увидеть, например и 5-ую. Как объяснить 5-ую книгу серии? Дело в том, что Джон в книге не один: в 5-ой книге Тирион плыл с Джоном Когннингтоном по прозвищу “Грифф”. В пользу этой версии говорит и слово “грифф”.</p>
 
 <p>Альтернативная тема по большей части посвящена Давосу. Здесь же сильны и признаки Дейнерис Бурерожденной: “ден”, “кхал”, “дракон”, “дрог”. Если вглядется, то можно увидеть всего по немножку: “бриен”, “ходор”, “бран”, “виктарион” и прочие. Одной из причин связи линии Давоса и линии Дейнерис может быть “дракон”: Драконий Камень, где расположен замок Станниса и настоящие драконы Дени. Тем не менее, основной в этой теме — Давос, что и подтверждают основные документы ниже.</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Документы темы 2</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">Книга 1, Глава 63, Тирион
-</span><span class="line">Книга 3, Глава 62, Тирион
-</span><span class="line">Книга 1, Глава 39, Тирион
-</span><span class="line">Книга 3, Глава 68, Тирион
-</span><span class="line">Книга 1, Глава 32, Тирион
-</span><span class="line">Книга 1, Глава 22, Тирион
-</span><span class="line">Книга 5, Глава 2, Тирион
-</span><span class="line">Книга 2, Глава 4, Тирион
-</span><span class="line">Книга 5, Глава 23, Тирион
-</span><span class="line">Книга 5, Глава 28, Тирион
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Документы темы 2
+Книга 1, Глава 63, Тирион
+Книга 3, Глава 62, Тирион
+Книга 1, Глава 39, Тирион
+Книга 3, Глава 68, Тирион
+Книга 1, Глава 32, Тирион
+Книга 1, Глава 22, Тирион
+Книга 5, Глава 2, Тирион
+Книга 2, Глава 4, Тирион
+Книга 5, Глава 23, Тирион
+Книга 5, Глава 28, Тирион
+</code></p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Документы темы 2 &#8220;наоборот&#8221;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">Книга 2, Глава 43, Давос
-</span><span class="line">Книга 2, Глава 59, Давос
-</span><span class="line">Книга 2, Глава 11, Давос
-</span><span class="line">Книга 3, Глава 12, Давос
-</span><span class="line">Книга 3, Глава 38, Давос
-</span><span class="line">Книга 3, Глава 56, Давос
-</span><span class="line">Книга 2, Глава 1, Пролог
-</span><span class="line">Книга 3, Глава 65, Давос
-</span><span class="line">Книга 3, Глава 27, Давос
-</span><span class="line">Книга 5, Глава 16, Давос
-</span><span class="line">Книга 5, Глава 10, Давос
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Документы темы 2 "наоборот"
+Книга 2, Глава 43, Давос
+Книга 2, Глава 59, Давос
+Книга 2, Глава 11, Давос
+Книга 3, Глава 12, Давос
+Книга 3, Глава 38, Давос
+Книга 3, Глава 56, Давос
+Книга 2, Глава 1, Пролог
+Книга 3, Глава 65, Давос
+Книга 3, Глава 27, Давос
+Книга 5, Глава 16, Давос
+Книга 5, Глава 10, Давос
+</code></p>
 
 <h3 id="vs-">Тема 3. Кхалиси vs ???</h3>
 
-<p><img src="http://datadeep.ru/images/2015-09_TopicModelling_GameOfThrones/GoT_topic_3.png" width="768" height="576" title="Основные слова темы 3" /></p>
+<p><img src="/images/2015-09_TopicModelling_GameOfThrones/GoT_topic_3.png" width="768" height="576" title="Основные слова темы 3" ></p>
 
 <p>Здесь с положительной темой никаких сомнений нет: сплошная Дейнерис. Отрицательная тема интересней — основной здесь выступает Кейтелин Старк, но присутствуют и “давос”, “робб”, “санса”, “алейн”, “джейм”, “джон”, “станнис” и т.д. И если присутствие большинства из них вполне объяснимо, то персонажи линии Станниса (“давос”, “станнис”, “мелисандр”) объяснить сложно. Получается в некотором смысле “глобальная” тема, охватывающая Старков, Фреев, Ланнистеров, Талли, Баратеонов, Грейджоев, Болтонов — почти всех обитателей Вестероса.</p>
 
 <p>Это наталкивает на мысль, что эта тема — совего рода Узкое море — разделяет миры Вестероса и Эссоса. В пользу этого говорят и такие слова “положительной” части, как: “квентин”, “астапор”, “миэрин”. В этом смысле, забавно, что “положительная” часть так же включает слово “вестерос” — видимо на востоке от Узкого моря о вестеросе вспоминают чаще, чем в нем самом :)</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Документы темы 3</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">Книга 1, Глава 65, Дейенерис
-</span><span class="line">Книга 3, Глава 25, Дейенерис
-</span><span class="line">Книга 3, Глава 73, Дейенерис
-</span><span class="line">Книга 3, Глава 44, Дейенерис
-</span><span class="line">Книга 3, Глава 59, Дейенерис
-</span><span class="line">Книга 5, Глава 3, Дейенерис
-</span><span class="line">Книга 5, Глава 17, Дейенерис
-</span><span class="line">Книга 1, Глава 47, Дейенерис
-</span><span class="line">Книга 1, Глава 24, Дейенерис
-</span><span class="line">Книга 3, Глава 10, Дейенерис
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Документы темы 3
+Книга 1, Глава 65, Дейенерис
+Книга 3, Глава 25, Дейенерис
+Книга 3, Глава 73, Дейенерис
+Книга 3, Глава 44, Дейенерис
+Книга 3, Глава 59, Дейенерис
+Книга 5, Глава 3, Дейенерис
+Книга 5, Глава 17, Дейенерис
+Книга 1, Глава 47, Дейенерис
+Книга 1, Глава 24, Дейенерис
+Книга 3, Глава 10, Дейенерис
+</code></p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Документы темы 3 &#8220;наоборот&#8221;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">Книга 4, Глава 42, Алейна
-</span><span class="line">Книга 4, Глава 24, Алейна
-</span><span class="line">Книга 4, Глава 11, Санса
-</span><span class="line">Книга 2, Глава 43, Давос
-</span><span class="line">Книга 1, Глава 60, Кейтилин
-</span><span class="line">Книга 1, Глава 35, Кейтилин
-</span><span class="line">Книга 3, Глава 51, Кейтилин
-</span><span class="line">Книга 2, Глава 40, Кейтилин
-</span><span class="line">Книга 1, Глава 72, Кейтилин
-</span><span class="line">Книга 3, Глава 21, Тирион
-</span><span class="line">Документы
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Документы темы 3 "наоборот"
+Книга 4, Глава 42, Алейна
+Книга 4, Глава 24, Алейна
+Книга 4, Глава 11, Санса
+Книга 2, Глава 43, Давос
+Книга 1, Глава 60, Кейтилин
+Книга 1, Глава 35, Кейтилин
+Книга 3, Глава 51, Кейтилин
+Книга 2, Глава 40, Кейтилин
+Книга 1, Глава 72, Кейтилин
+Книга 3, Глава 21, Тирион
+Документы 
+</code></p>
 
 <h3 id="vs---">Тема 4. Контрабандист vs Ходор и Бран</h3>
 
-<p><img src="http://datadeep.ru/images/2015-09_TopicModelling_GameOfThrones/GoT_topic_4.png" width="768" height="576" title="Основные слова темы 4" /></p>
+<p><img src="/images/2015-09_TopicModelling_GameOfThrones/GoT_topic_4.png" width="768" height="576" title="Основные слова темы 4" ></p>
 
 <p>“Положительная” тема здесь — еще одна тема Давоса. Однако, здесь помимо Давоса выделяются “сэм” и “тирион”. Если с первым все объяснимо — Станнис довольно долго гостил на Стене у ночного дозора, то с Тирионом найти объяснение нелегко. Возможно, здесь роль сыграла битва при Черноводной: благо что “черноводн” среди списка слов встречается.</p>
 
@@ -670,57 +552,37 @@ K < N, M %]]&gt;</script> и воспользоваться truncated SVD:</p>
 
 <p>Список документов в данном случае ничего интересно не привноситю</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Документы темы 4</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">Книга 2, Глава 43, Давос
-</span><span class="line">Книга 2, Глава 59, Давос
-</span><span class="line">Книга 2, Глава 11, Давос
-</span><span class="line">Книга 3, Глава 12, Давос
-</span><span class="line">Книга 3, Глава 38, Давос
-</span><span class="line">Книга 3, Глава 56, Давос
-</span><span class="line">Книга 3, Глава 65, Давос
-</span><span class="line">Книга 3, Глава 27, Давос
-</span><span class="line">Книга 5, Глава 16, Давос
-</span><span class="line">Книга 2, Глава 1, Пролог
-</span><span class="line">Книга 5, Глава 10, Давос
-</span><span class="line">Книга 3, Глава 7, Давос
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Документы темы 4
+Книга 2, Глава 43, Давос
+Книга 2, Глава 59, Давос
+Книга 2, Глава 11, Давос
+Книга 3, Глава 12, Давос
+Книга 3, Глава 38, Давос
+Книга 3, Глава 56, Давос
+Книга 3, Глава 65, Давос
+Книга 3, Глава 27, Давос
+Книга 5, Глава 16, Давос
+Книга 2, Глава 1, Пролог
+Книга 5, Глава 10, Давос
+Книга 3, Глава 7, Давос
+</code></p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Документы темы 4 &#8220;наоборот&#8221;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">Книга 3, Глава 58, Бран
-</span><span class="line">Книга 1, Глава 38, Бран
-</span><span class="line">Книга 1, Глава 54, Бран
-</span><span class="line">Книга 2, Глава 17, Бран
-</span><span class="line">Книга 1, Глава 25, Бран
-</span><span class="line">Книга 5, Глава 35, Бран
-</span><span class="line">Книга 3, Глава 42, Бран
-</span><span class="line">Книга 2, Глава 70, Бран
-</span><span class="line">Книга 3, Глава 11, Бран
-</span><span class="line">Книга 5, Глава 14, Бран
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Документы темы 4 "наоборот"
+Книга 3, Глава 58, Бран
+Книга 1, Глава 38, Бран
+Книга 1, Глава 54, Бран
+Книга 2, Глава 17, Бран
+Книга 1, Глава 25, Бран
+Книга 5, Глава 35, Бран
+Книга 3, Глава 42, Бран
+Книга 2, Глава 70, Бран
+Книга 3, Глава 11, Бран
+Книга 5, Глава 14, Бран
+</code></p>
 
 <h3 id="vs----1">Тема 5. Не совсем Бран vs Джейм и Бриенна</h3>
 
-<p><img src="http://datadeep.ru/images/2015-09_TopicModelling_GameOfThrones/GoT_topic_5.png" width="768" height="576" title="Основные слова темы 5" /></p>
+<p><img src="/images/2015-09_TopicModelling_GameOfThrones/GoT_topic_5.png" width="768" height="576" title="Основные слова темы 5" ></p>
 
 <p>Здесь “положительная” тема вновь похожа на винегрет: с одной стороны, лидирует “бран”, а с другой по пятам за ним следуют “тирион” и “давос”. И хоть Бран в этой теме явно доминирует (как-никак, первые девять глав темы — главы Брана), объяснить столь большой вес у слов “тирион” и “давос” непросто. Участие Тириона можно обяснить первой книгой, где он сначала пребывает в Винтерфелле, а затем путешествует на стену и там, в том числе, обсуждает Брана с Джоном Сноу. Присутствие Давос совсем загадочно. Единственное, что приходит на ум — все та же битва при Черноводной, тем более что 59-ая глава 2-ой книги посвящена именно ей.</p>
 
@@ -728,156 +590,99 @@ K < N, M %]]&gt;</script> и воспользоваться truncated SVD:</p>
 
 <p>Документы этих тем:</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Документы темы 5</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">Книга 3, Глава 58, Бран
-</span><span class="line">Книга 1, Глава 25, Бран
-</span><span class="line">Книга 1, Глава 54, Бран
-</span><span class="line">Книга 3, Глава 42, Бран
-</span><span class="line">Книга 1, Глава 38, Бран
-</span><span class="line">Книга 2, Глава 17, Бран
-</span><span class="line">Книга 5, Глава 35, Бран
-</span><span class="line">Книга 2, Глава 70, Бран
-</span><span class="line">Книга 5, Глава 14, Бран
-</span><span class="line">Книга 1, Глава 63, Тирион
-</span><span class="line">Книга 3, Глава 11, Бран
-</span><span class="line">Книга 2, Глава 59, Давос
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Документы темы 5
+Книга 3, Глава 58, Бран
+Книга 1, Глава 25, Бран
+Книга 1, Глава 54, Бран
+Книга 3, Глава 42, Бран
+Книга 1, Глава 38, Бран
+Книга 2, Глава 17, Бран
+Книга 5, Глава 35, Бран
+Книга 2, Глава 70, Бран
+Книга 5, Глава 14, Бран
+Книга 1, Глава 63, Тирион
+Книга 3, Глава 11, Бран
+Книга 2, Глава 59, Давос
+</code></p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Документы темы 5 &#8220;наоборот&#8221;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">Книга 4, Глава 5, Бриенна
-</span><span class="line">Книга 4, Глава 10, Бриенна
-</span><span class="line">Книга 4, Глава 21, Бриенна
-</span><span class="line">Книга 4, Глава 28, Джейме
-</span><span class="line">Книга 4, Глава 15, Бриенна
-</span><span class="line">Книга 4, Глава 42, Алейна
-</span><span class="line">Книга 4, Глава 43, Бриенна
-</span><span class="line">Книга 3, Глава 46, Джейме
-</span><span class="line">Книга 3, Глава 69, Джейме
-</span><span class="line">Книга 4, Глава 34, Джейме
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Документы темы 5 "наоборот"
+Книга 4, Глава 5, Бриенна
+Книга 4, Глава 10, Бриенна
+Книга 4, Глава 21, Бриенна
+Книга 4, Глава 28, Джейме
+Книга 4, Глава 15, Бриенна
+Книга 4, Глава 42, Алейна
+Книга 4, Глава 43, Бриенна
+Книга 3, Глава 46, Джейме
+Книга 3, Глава 69, Джейме
+Книга 4, Глава 34, Джейме
+</code></p>
 
 <h3 id="vs---2">Тема 6. Сэм Тарли vs Джон Сноу</h3>
 
-<p><img src="http://datadeep.ru/images/2015-09_TopicModelling_GameOfThrones/GoT_topic_6.png" width="768" height="576" title="Основные слова темы 6" /></p>
+<p><img src="/images/2015-09_TopicModelling_GameOfThrones/GoT_topic_6.png" width="768" height="576" title="Основные слова темы 6" ></p>
 
 <p>Эта тема довольно интересна: в отличие от предыдущих здесь Сэм и Джон встречаются не вместе, а напротив, противопоставляются друг другу! Так, документы “положительной” относятся к похождениям и мыслям Сэма (и чуточку Брана), а “отрицательная” подтема полностью относится к Джону Сноу.</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Документы темы 6</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">Книга 3, Глава 20, Сэмвел
-</span><span class="line">Книга 4, Глава 27, Сэмвел
-</span><span class="line">Книга 3, Глава 48, Сэмвел
-</span><span class="line">Книга 3, Глава 35, Сэмвел
-</span><span class="line">Книга 4, Глава 6, Сэмвел
-</span><span class="line">Книга 4, Глава 36, Сэмвел
-</span><span class="line">Книга 4, Глава 46, Сэмвел
-</span><span class="line">Книга 4, Глава 16, Сэмвел
-</span><span class="line">Книга 3, Глава 58, Бран
-</span><span class="line">Книга 3, Глава 77, Сэмвел
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Документы темы 6
+Книга 3, Глава 20, Сэмвел
+Книга 4, Глава 27, Сэмвел
+Книга 3, Глава 48, Сэмвел
+Книга 3, Глава 35, Сэмвел
+Книга 4, Глава 6, Сэмвел
+Книга 4, Глава 36, Сэмвел
+Книга 4, Глава 46, Сэмвел
+Книга 4, Глава 16, Сэмвел
+Книга 3, Глава 58, Бран
+Книга 3, Глава 77, Сэмвел
+</code></p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Документы темы 6 &#8220;наоборот&#8221;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">Книга 3, Глава 17, Джон
-</span><span class="line">Книга 3, Глава 75, Джон
-</span><span class="line">Книга 3, Глава 57, Джон
-</span><span class="line">Книга 3, Глава 43, Джон
-</span><span class="line">Книга 6, Глава 17, Джон
-</span><span class="line">Книга 6, Глава 22, Джон
-</span><span class="line">Книга 3, Глава 9, Джон
-</span><span class="line">Книга 1, Глава 20, Джон
-</span><span class="line">Книга 3, Глава 71, Джон
-</span><span class="line">Книга 3, Глава 66, Джон
-</span><span class="line">Книга 3, Глава 28, Джон
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Документы темы 6 "наоборот"
+Книга 3, Глава 17, Джон
+Книга 3, Глава 75, Джон
+Книга 3, Глава 57, Джон
+Книга 3, Глава 43, Джон
+Книга 6, Глава 17, Джон
+Книга 6, Глава 22, Джон
+Книга 3, Глава 9, Джон
+Книга 1, Глава 20, Джон
+Книга 3, Глава 71, Джон
+Книга 3, Глава 66, Джон
+Книга 3, Глава 28, Джон
+</code></p>
 
 <h3 id="vs----2">Тема 7. Петир и Санса vs Джейме и Бриенна</h3>
 
-<p><img src="http://datadeep.ru/images/2015-09_TopicModelling_GameOfThrones/GoT_topic_7.png" width="768" height="576" title="Основные слова темы 7" /></p>
+<p><img src="/images/2015-09_TopicModelling_GameOfThrones/GoT_topic_7.png" width="768" height="576" title="Основные слова темы 7" ></p>
 
 <p>Эта тема интерпретируется так же легко, как и предыдущая. “Положительная” часть относится к главам главам Сансы Старк (Алены Стоун) и Петира Бейлиша — к этому и “лиза” и “роберт” и “нестор”.
 “Отрицательная” же — еще одна относящаяся к Джейме и Бриенне, но на этот раз без примеси Сансы, Сэма и прочих.</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Документы темы 7</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">Книга 4, Глава 42, Алейна
-</span><span class="line">Книга 4, Глава 24, Алейна
-</span><span class="line">Книга 4, Глава 11, Санса
-</span><span class="line">Книга 3, Глава 70, Санса
-</span><span class="line">Книга 3, Глава 82, Санса
-</span><span class="line">Книга 1, Глава 16, Санса
-</span><span class="line">Книга 3, Глава 8, Санса
-</span><span class="line">Книга 1, Глава 52, Санса
-</span><span class="line">Книга 3, Глава 30, Санса
-</span><span class="line">Книга 1, Глава 35, Кейтилин
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Документы темы 7
+Книга 4, Глава 42, Алейна
+Книга 4, Глава 24, Алейна
+Книга 4, Глава 11, Санса
+Книга 3, Глава 70, Санса
+Книга 3, Глава 82, Санса
+Книга 1, Глава 16, Санса
+Книга 3, Глава 8, Санса
+Книга 1, Глава 52, Санса
+Книга 3, Глава 30, Санса
+Книга 1, Глава 35, Кейтилин
+</code></p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Документы темы 7 &#8220;наоборот&#8221;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-</pre></td><td class="code"><pre><code class="text"><span class="line">Книга 4, Глава 21, Бриенна
-</span><span class="line">Книга 4, Глава 10, Бриенна
-</span><span class="line">Книга 3, Глава 46, Джейме
-</span><span class="line">Книга 4, Глава 5, Бриенна
-</span><span class="line">Книга 4, Глава 28, Джейме
-</span><span class="line">Книга 3, Глава 3, Джейме
-</span><span class="line">Книга 4, Глава 43, Бриенна
-</span><span class="line">Книга 4, Глава 15, Бриенна
-</span><span class="line">Книга 3, Глава 13, Джейме
-</span><span class="line">Книга 3, Глава 23, Джейме
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p><code>text Документы темы 7 "наоборот"
+Книга 4, Глава 21, Бриенна
+Книга 4, Глава 10, Бриенна
+Книга 3, Глава 46, Джейме
+Книга 4, Глава 5, Бриенна
+Книга 4, Глава 28, Джейме
+Книга 3, Глава 3, Джейме
+Книга 4, Глава 43, Бриенна
+Книга 4, Глава 15, Бриенна
+Книга 3, Глава 13, Джейме
+Книга 3, Глава 23, Джейме
+</code></p>
 
 <h1 id="section-10">Заключение</h1>
 
