@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://datadeep.ru/blog/2015/10/05/tiematichieskoie-modielirovaniie-ighry-priestolov/</loc>
-    <lastmod>2015-10-05T23:59:59+03:00</lastmod>
-  </url>
-  <url>
     <loc>http://datadeep.ru/</loc>
   </url>
   <url>
@@ -12,18 +8,6 @@
   </url>
   <url>
     <loc>http://datadeep.ru/about_blog/</loc>
-  </url>
-  <url>
-    <loc>http://datadeep.ru/blog/categories/mashinnoie-obuchieniie/</loc>
-  </url>
-  <url>
-    <loc>http://datadeep.ru/blog/categories/tiematichieskoie-modielirovaniie/</loc>
-  </url>
-  <url>
-    <loc>http://datadeep.ru/blog/categories/obrabotka-tieksta/</loc>
-  </url>
-  <url>
-    <loc>http://datadeep.ru/blog/categories/vizualizatsiia/</loc>
   </url>
   <url>
     <loc>http://datadeep.ru/downloads/code/signet_nin_finetune_deploy.html</loc>
